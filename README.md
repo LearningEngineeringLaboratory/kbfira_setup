@@ -52,6 +52,63 @@ docker logs ID #エラー時などのログ確認
 docker-compose logs (コンテナ名) #docker-composeでのログ出力,コンテナ名を指定するとその箇所のみのログを出力
 ```
 # LiveServer実装
-1. 以下の記事(URL)より,手順に沿ってインストールして下さい
-    https://web-niar.com/blog/vscode-liveserver-mamp/
-1. 手順1~5のうち2と5は不要
+1. VSCodeにLive Serverの拡張機能をインストール
+    1. 左のナビの「拡張機能」をクリック（下図）
+       
+       ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/a51338a1-95bf-40fc-bbc7-b89282e2e25c)
+       
+    1. 「LiveServer」と検索し，インストール（インストールしたら勝手に有効になる）
+       
+       ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/3aebe5ae-acf4-4d42-9a43-db948241b0e3)
+       
+1. Google ChromeにLive Server Web Extensionをインストールし、初期設定
+    1. [こちらのURL](https://chromewebstore.google.com/detail/live-server-web-extension/fiegdmejfepffgpnejdinekhfieaogmj?hl=ja&pli=1) からChromeの拡張機能「Live Server Web Extension」をインストール
+    1. Chrome右上の拡張機能のアイコン（下記）→インストールした「Live Server Web Extension」（下記）の順にクリック
+
+        ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/257ac351-0b75-4a6b-a42b-9ba17205f7ad)
+    
+        ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/b1ab5bb3-e1bf-4f2c-baa8-d450fc0c0e1d)
+    
+        - 「Actual Server Address」にローカルでのアドレス「 http://localhost:8081/ 」を入力
+    
+        - 「Live Server Address」にLive Serverのローカルでのアドレス「 http://127.0.0.1:5500/ 」を入力
+    
+        - 「Apply」をクリック。上にある「Live Reload」をオンにする。最終的に下図のようになる。
+    
+            <img src="https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/2ad6e82e-ac8d-479e-a9c6-348e97cd438f" width=200>
+
+
+1. VSCodeのLive Serverの立ち上げ
+     1. 下のバーにある「Go Live」をクリック。「Port:5500」に表示が変わったらOK！
+
+        ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/bec4e2af-6247-4975-b2b4-0ebb706a101f)
+        
+        ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/195865fb-ba71-4e92-9dc7-f659395e813e)
+    
+        なお，以下のような画面がブラウザで自動的に開く場合があるが無視して良い．閉じても良い
+    
+        ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/d78b961b-0e08-4f38-ab39-892ee89b5639)
+
+1. 動作確認
+    1. 動作確認として、http://localhost:8081/kbfira_docs/index.php/ （下図の画面が出てくるはず）を見ながらファイルを編集してみる
+       - `kbfira_setup/nginx/kbfira_docs/home/view/home.php`を編集すればよい.
+       - dockerが動いていないとそもそもlocalhostが立ち上がらないので注意.
+    3. Chromeで表示しているページが勝手にリロードされ，変更が反映されていれば成功！！！！
+       - 変更前
+
+            ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/a890925b-5af9-47fc-912e-538c40cb879c)
+        
+        - 下のように変更すると...
+        
+            ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/0e7c124d-323f-4c56-ad41-c68e23066d05)
+        
+        - 自動的にブラウザの画面が変化！！KIt-Build Concept Map!!!!
+        
+            ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/902f4050-c2ea-449c-83ec-0f905b818928)
+    
+
+
+
+
+
+
