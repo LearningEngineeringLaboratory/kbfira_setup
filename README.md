@@ -90,10 +90,10 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
         ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/d78b961b-0e08-4f38-ab39-892ee89b5639)
 
 1. 動作確認
-    1. 動作確認として、http://localhost:8081/kbfira_docs/index.php/ （下図の画面が出てくるはず）を見ながらファイルを編集してみる
-       - `kbfira_setup/nginx/kbfira_docs/home/view/home.php`を編集すればよい.
+    1. 動作確認として、chromeで http://localhost:8081/kbfira_docs/index.php/ （下図の画面が出てくるはず）を見ながらファイルを編集してみる
+       - VS Code上で `kbfira_setup/nginx/kbfira_docs/home/view/home.php`を編集すればよい.
        - dockerが動いていないとそもそもlocalhostが立ち上がらないので注意.
-    3. Chromeで表示しているページが勝手にリロードされ，変更が反映されていれば成功！！！！
+    3. VS Codeでコードを編集して保存した後,Chromeで表示しているページが自動的にリロードされ，変更が反映されていれば成功！！！！
        - 変更前
 
             ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/a890925b-5af9-47fc-912e-538c40cb879c)
