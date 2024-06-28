@@ -1,9 +1,10 @@
 FROM ajoergensen/nginx-php-fpm:8.2
 
+RUN apt install sudo 
+
+RUN sudo curl https://nginx.org/keys/nginx_signing.key | gpg --dearmor | sudo tee /usr/share/keyrings/nginx-archive-keyring.gpg >/dev/null
 
 RUN apt update 
-
-RUN apt install sudo 
 
 RUN sudo apt install nano
 
