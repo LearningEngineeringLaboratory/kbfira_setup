@@ -105,9 +105,49 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
         - 自動的にブラウザの画面が変化！！KIt-Build Concept Map!!!!
         
             ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/902f4050-c2ea-449c-83ec-0f905b818928)
-    
 
+# 毎回の立ち上げ
 
+1. Docker Desktopアプリを立ち上げ
+1. VS Codeでリポジトリ（一番上のフォルダ）に移動する   
+    -  確認方法
+       ```
+       ls
+       ```
+        上のコマンドを打って、以下の内容が出たらOK!
+       ```
+       Dockerのインストール方法(Windows).md
+       img
+       README.md
+       mysql
+       docker-compose.yml
+       nginx
+       ```
+1. VS Codeのターミナルで以下のコマンドを打ってdockerを立ち上げ
+   ```
+   docker-compose up -d
+   ```
+   - 確認方法
+     ```
+     docker ps
+     ```
+     上のコマンドを打って、以下の内容が出たらOK!
+       ```
+       CONTAINER ID   IMAGE                COMMAND                   CREATED      STATUS         PORTS                               NAMES
+       9b64142543ee   mysql:8.0.36         "docker-entrypoint.s…"   6 days ago   Up 6 seconds   33060/tcp, 0.0.0.0:3308->3306/tcp   mysql-container
+       e135ba61d170   kbfira_setup-nginx   "/sbin/my_init"           6 days ago   Up 6 seconds   0.0.0.0:8081->80/tcp                nginx-container
+       ```
+1. VS CodeでLive Serverを立ち上げ
+
+   1. 下のバーにある「Go Live」をクリック。「Port:5500」に表示が変わったらOK！
+
+        ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/bec4e2af-6247-4975-b2b4-0ebb706a101f)
+        
+        ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/195865fb-ba71-4e92-9dc7-f659395e813e)
+
+1.  http://localhost:8081/kbfira_docs/index.php/ にアクセスしてホーム画面が表示されたらOK
+
+    ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/a890925b-5af9-47fc-912e-538c40cb879c)
 
 
 
