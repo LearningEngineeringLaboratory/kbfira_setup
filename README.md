@@ -149,6 +149,32 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
 
     ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/a890925b-5af9-47fc-912e-538c40cb879c)
 
+# issueを立てるときのルール
 
+レビュワー：レビューを評価する人
+レビュイー：レビューを評価してもらう人
 
+**基本的な作業フロー**
+1. レビュワーは、レビュワーを指定してプルリクを送信
+1. レビュワーはファイルの更新内容を精査し承認（Approve）するか更に変更を求める（Request Changes）
+1. レビュイーは、承認された場合はMergeし、変更を求められた場合は更に変更を加える。追加の変更が終わったらメッセージなどでその旨をレビュワーに伝え、レビューを待つ。2に戻る。
 
+**細かいルール**
+* レビュイーがMergeを行う（上記3.にも記載）
+
+**Issueの立て方について**
+1. ブラウザでkbfira_setupのgitページに行き，上部のタブからIssuesに入る
+![](https://scrapbox.io/files/667e5cee254f19001d0e0716.png)
+
+1. Issuesタブの右は時のNew Issueから新たなIssueを立てる
+![](https://scrapbox.io/files/667e5d7a8dedd4001d672f8d.png)
+
+**branchの切り方について**
+1. Issueを立てた番号を確認する
+![](https://scrapbox.io/files/667e5c3cc59cdd001cec40dc.png)
+
+1. vscode上に移り，左下のボタンを押す．（名前は人次第で違うかも）
+![](https://scrapbox.io/files/667e5e43174976001cb511f7.png)
+
+1. 上記にブランチの名前を入力するところが出てくるはずなので，ブランチ名をfeature + Issueの番号にし（例:feature-11)，Create new branchを押す
+![](https://scrapbox.io/files/667e5f0049dc6e001cb36c4e.png)
