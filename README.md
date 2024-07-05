@@ -178,3 +178,30 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
 
 1. 上記にブランチの名前を入力するところが出てくるはずなので，ブランチ名をfeature + Issueの番号にし（例:feature-11)，Create new branchを押す
 ![667e5f0049dc6e001cb36c4e](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/118393714/488803e2-d73c-43c2-8171-d2c693b8d70b)
+
+**オンライン上のリポジトリに向けたpushの流れ**
+1. vscodeでターミナルを開く（ターミナルが開いてない人は上のTerminalからNewTerminal)
+
+1. 初めに以下のコマンドをターミナルで打つ
+    ```
+    git add
+    ```
+
+1. 次にコミットメッセージを書いて以下のコマンドをターミナルで打つ（※コミットメッセージは日本語だと文字化けする可能性があるので注意）
+     ```
+     git commit -m "Issueの番号 + コミットメッセージ"
+    ```
+
+    例：
+         ```
+         git commit -m "#11 Edit readme"
+         ```
+
+1. 最後にオンラインのgitに向けて以下のコマンドを打つ
+     ```
+     git push origin branchの名前
+     ```
+     例：
+         ```
+         git push origin feature-11
+         ```
