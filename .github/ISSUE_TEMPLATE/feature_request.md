@@ -1,20 +1,28 @@
----
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
-
----
-
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
-
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
-
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
+name: 機能追加
+description: 機能追加の要望テンプレート
+title: "[FEATURES]:"
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景
+      description: 機能を追加したい背景を入力して下さい。
+      placeholder: "ex) 不特定多数のユーザーがアクセスできる状態になっているため。"
+    validations:
+      required: false
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 提案内容
+      description: 追加したい機能の提案内容を入力して下さい。
+      placeholder: "ex)\n- ログイン処理の追加\n- 2段階認証の導入"
+    validations:
+      required: false
+  - type: textarea
+    id: others
+    attributes:
+      label: その他
+      description: 関連Issueや参考サイトなど、その他伝えたいことあれば入力して下さい。
+    validations:
+      required: false
