@@ -164,17 +164,17 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
 
 **Issueの立て方について**
 1. ブラウザでkbfira_setupのgitページに行き，上部のタブからIssuesに入る
-![](https://scrapbox.io/files/667e5cee254f19001d0e0716.png)
+![667e5cee254f19001d0e0716](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/118393714/b41adab6-9938-4ee7-a2e5-4794842aa4bd)
 
 1. Issuesタブの右は時のNew Issueから新たなIssueを立てる
-![](https://scrapbox.io/files/667e5d7a8dedd4001d672f8d.png)
+![667e5d7a8dedd4001d672f8d](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/118393714/783c1e34-b782-4630-a745-0f2b5832b241)
 
 **branchの切り方について**
 1. Issueを立てた番号を確認する
-![](https://scrapbox.io/files/667e5c3cc59cdd001cec40dc.png)
+![667e5c3cc59cdd001cec40dc](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/118393714/5c78e3df-36c0-4d21-9249-7eb2776fa625)
 
 1. vscode上に移り，左下のボタンを押す．（名前は人次第で違うかも）
-![](https://scrapbox.io/files/667e5e43174976001cb511f7.png)
+![667e5e43174976001cb511f7](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/118393714/e1741912-cbb7-4d1c-8533-e597331535ad)
 
 1. 上記にブランチの名前を入力するところが出てくるはずなので，ブランチ名をfeature + Issueの番号にし（例:feature-11)，Create new branchを押す
-![](https://scrapbox.io/files/667e5f0049dc6e001cb36c4e.png)
+![667e5f0049dc6e001cb36c4e](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/118393714/488803e2-d73c-43c2-8171-d2c693b8d70b)
