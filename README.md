@@ -262,7 +262,7 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
     ```
     HTMLとしてレンダリングされるPHPファイルが入っている (View)
     ```
-    Moel
+    Model
     ```
     データベースとのやり取りを行う機能が`.shared`ディレクトリ内の`api`、`service`に実装されている
 
