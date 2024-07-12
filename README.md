@@ -192,7 +192,7 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
      git commit -m "Issueの番号 + コミットメッセージ"
     ```
 
-    -例
+    - 例
          ```
          git commit -m "#11 Edit readme"
          ```
@@ -201,11 +201,12 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
      ```
      git push origin branchの名前
      ```
-     -例
+     - 例
          ```
          git push origin feature-11
          ```# システム構成図の説明
 
+# KitBuild システム構成
 1.  ディレクトリ構成の概要
     ```
     .asset
@@ -261,7 +262,7 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
     ```
     HTMLとしてレンダリングされるPHPファイルが入っている (View)
     ```
-    Moel
+    Model
     ```
     データベースとのやり取りを行う機能が`.shared`ディレクトリ内の`api`、`service`に実装されている
 
