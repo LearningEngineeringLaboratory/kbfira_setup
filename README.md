@@ -149,10 +149,62 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
 
     ![image](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/134689144/a890925b-5af9-47fc-912e-538c40cb879c)
 
+# issueを立てるときのルール
 
+レビュワー：レビューを評価する人
+レビュイー：レビューを評価してもらう人
 
+**基本的な作業フロー**
+1. レビュワーは、レビュワーを指定してプルリクを送信
+1. レビュワーはファイルの更新内容を精査し承認（Approve）するか更に変更を求める（Request Changes）
+1. レビュイーは、承認された場合はMergeし、変更を求められた場合は更に変更を加える。追加の変更が終わったらメッセージなどでその旨をレビュワーに伝え、レビューを待つ。2に戻る。
 
-# システム構成図の説明
+**細かいルール**
+* レビュイーがMergeを行う（上記3.にも記載）
+
+**Issueの立て方について**
+1. ブラウザでkbfira_setupのgitページに行き，上部のタブからIssuesに入る
+![667e5cee254f19001d0e0716](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/118393714/b41adab6-9938-4ee7-a2e5-4794842aa4bd)
+
+1. Issuesタブの右は時のNew Issueから新たなIssueを立てる
+![667e5d7a8dedd4001d672f8d](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/118393714/783c1e34-b782-4630-a745-0f2b5832b241)
+
+**branchの切り方について**
+1. Issueを立てた番号を確認する
+![667e5c3cc59cdd001cec40dc](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/118393714/5c78e3df-36c0-4d21-9249-7eb2776fa625)
+
+1. vscode上に移り，左下のボタンを押す．（名前は人次第で違うかも）
+![667e5e43174976001cb511f7](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/118393714/e1741912-cbb7-4d1c-8533-e597331535ad)
+
+1. 上記にブランチの名前を入力するところが出てくるはずなので，ブランチ名をfeature + Issueの番号にし（例:feature-11)，Create new branchを押す
+![667e5f0049dc6e001cb36c4e](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/118393714/488803e2-d73c-43c2-8171-d2c693b8d70b)
+
+**オンライン上のリポジトリに向けたpushの流れ**
+1. vscodeでターミナルを開く（ターミナルが開いてない人は上のTerminalからNewTerminal)
+
+1. 初めに以下のコマンドをターミナルで打つ
+    ```
+    git add .
+    ```
+
+1. 次にコミットメッセージを書いて以下のコマンドをターミナルで打つ（※コミットメッセージは日本語だと文字化けする可能性があるので注意）
+     ```
+     git commit -m "Issueの番号 + コミットメッセージ"
+    ```
+
+    -例
+         ```
+         git commit -m "#11 Edit readme"
+         ```
+
+1. 最後にオンラインのgitに向けて以下のコマンドを打つ
+     ```
+     git push origin branchの名前
+     ```
+     -例
+         ```
+         git push origin feature-11
+         ```# システム構成図の説明
 
 1.  ディレクトリ構成の概要
     ```
