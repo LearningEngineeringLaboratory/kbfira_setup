@@ -192,7 +192,7 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
      git commit -m "Issueの番号 + コミットメッセージ"
     ```
 
-    -例
+    - 例
          ```
          git commit -m "#11 Edit readme"
          ```
@@ -201,7 +201,7 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
      ```
      git push origin branchの名前
      ```
-     -例
+     - 例
          ```
          git push origin feature-11
          ```# システム構成図の説明
