@@ -204,4 +204,88 @@ docker-compose logs (コンテナ名) #docker-composeでのログ出力,コン�
      -例
          ```
          git push origin feature-11
-         ```
+         ```# システム構成図の説明
+
+1.  ディレクトリ構成の概要
+    ```
+    .asset
+    ```
+    外部ライブラリのコードが入っており、基本的に触らない．ただし、"kitbuild"フォルダについてはAryoさんの書いたコードとなっているため、触る可能性がある．
+    
+    ```
+    .vscode
+    ```
+    VSCodeの設定ファイルが入っている
+    ```
+    core
+    ```
+    バックエンドの独自のコアフレームワークが入っている
+    ```
+    docs
+    ```
+    Dockerを使用しない環境構築方法のドキュメントが入っている
+    ```
+    node_modules
+    ```
+    JSDocの見た目のテーマに関するファイルが入っている
+    ```
+    server
+    ```
+    不明な役割のディレクトリで、システムから削除しても動作する？
+    ```
+    jsdoc.json
+    ```
+    JSDocの設定ファイル
+    ```
+    package.json, package-lock.json
+    ```
+    パッケージに関する設定ファイル（JSDocのテーマ導入の際に作成された）
+    ```
+    index.php
+    ```
+    システムへのエントリーポイントであるため，触らない方がよい？
+2. MVCモデルの構成
+
+    各機能は、MVCモデルに基づいたアプリケーションとして実装されている
+    ```
+    asset
+    ```
+    ユーザが行った操作に対してどのような処理をするかを規定するJavaScriptのファイルが入っている (Presentation)
+    ```
+    controller
+    ```
+    どのファイルを読み込むかを決定する (Controller)  
+    usePlugin関数内の'kitbuild'などは読み込むプラグインのショートハンドであり，実態は.shared/config/plugins.iniで定義されている
+    ```
+    view
+    ```
+    HTMLとしてレンダリングされるPHPファイルが入っている (View)
+    ```
+    Moel
+    ```
+    データベースとのやり取りを行う機能が`.shared`ディレクトリ内の`api`、`service`に実装されている
+
+3. 動作の流れ
+- ユーザーの操作は`asset`内のJSファイルで検知され、同ファイル内でViewの操作が行われる
+- コントローラは、どのViewファイル(PHPファイル)を読み込むかを決定する
+- JSファイルからAPIの関数を呼び出すことで、データベースとのやり取りが行われる
+- API -> Service -> SQLでデータベースとのやり取りを行い、Controller（JS？）に返り値を返す
+- APIとServiceは両方とも.sharedまたはアプリのフォルダ内にそれぞれ"api"または"service"というフォルダを作り，その中にPHPのファイルを置くことで使用可能になる  
+
+  JSからのAPIの呼び出し例
+  ```
+  this.ajax.get(`bugApi/getCandidate/${this.text.tid}`).then(candidates_object => { 
+   		
+   		}	
+  ```
+- `bugApi`の`getCandidate`という関数に，`${this.text.tid}`という引数を渡している
+- `bugApi`というのは，APIの名前．この場合，`kbfira_research/correct_bug/api`に`BugApiController.php`というファイルがあり，その中で`BugApiController`というクラスが定義されている．この場合，APIの名前はクラス名から"Controller"を除き，最初の文字を小文字とした`bugApi`となる．その中で同ファイル内の`getCandidate`関数が呼ばれ，その中でserviceとのやり取りが行われる．
+
+4. その他
+- `index.php/フォルダ名/コントローラ名/関数名/引数`でそれぞれの機能にアクセスできる
+  - コントローラ名は，上のAPI名と同じくクラス名から"Controller"を除き，最初の文字を小文字としたものとなる（e.g., クラス名が`HomeController`の場合，`home`）
+  - 引数は，スラッシュで区切っていくつでも指定できる
+  - e.g., `https://collab.kit-build.net:8080/fira/index.php/kitbuild/home/index/1/2/3`
+- `.`(ドット)が付いているファイル・ディレクトリは共有ファイルで、どこからでも参照可能
+
+![6629b36e8ef1b50024788903](https://github.com/LearningEngineeringLaboratory/kbfira_setup/assets/167501892/81819ed4-13a9-420c-aa50-4216fb09fa7c)
